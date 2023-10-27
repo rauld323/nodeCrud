@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
 // used to sign in, makes sure a password matches a hash
-export const compatePasswords = (password, hash) => {
+export const comparePasswords = (password, hash) => {
   return bcrypt.compare(password, hash);
 };
 
