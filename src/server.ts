@@ -1,3 +1,4 @@
+import { createNewUser, signin } from "./handlers/users";
 import { protect } from "./modules/auth";
 import express from "express";
 import router from "./router";
@@ -20,5 +21,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", protect, router);
-
+app.post("/user", createNewUser);
+app.post("/signin", signin);
 export default app;
