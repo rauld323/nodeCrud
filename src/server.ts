@@ -1,3 +1,4 @@
+import { protect } from "./modules/auth";
 import express from "express";
 import router from "./router";
 import morgan from "morgan";
@@ -18,6 +19,6 @@ app.get("/", (req, res) => {
   res.json({ message: "hello" });
 });
 
-app.use("/api", router);
+app.use("/api", protect, router);
 
 export default app;
